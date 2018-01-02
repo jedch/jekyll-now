@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about关于/
+title: About关于
+permalink: /about/
 ---
 
 专注于python，同时希望用swift养活自己。
