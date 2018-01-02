@@ -1,15 +1,15 @@
 ---
 layout: page
-title: About关于
+title: About
 permalink: /about/
 ---
 
-专注于python，同时希望用swift养活自己。
+Some information about you!
 
-### More Information更多信息
+### More Information
 
-打怪升级中……
+A place to include any other types of information that you'd like to include about yourself.
 
-### Contact me联系我（邮箱申请中）
+### Contact me
 
 [email@domain.com](mailto:email@domain.com)
