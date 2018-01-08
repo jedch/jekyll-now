@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 这是原来的示例文件。
+category: other
 ---
 
 中文Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).

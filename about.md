@@ -12,4 +12,4 @@ permalink: /about/
 
 ### 联系方式
 
-[email@domain.com](mailto:email@domain.com)
+[ieltsch@hotmail.com](mailto:ieltsch@hotmail.com)
