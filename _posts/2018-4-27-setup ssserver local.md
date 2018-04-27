@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在macOS系统下用pyinstaller打包PyQt5应用
+title: 搞科学，感谢给了我机会又学会了一门技术
 category: python
 ---
 ## 一.先说废话，别害怕，一步一步可以走下去
