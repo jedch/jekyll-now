@@ -29,3 +29,10 @@ category: python
 >     form = ThreeStep()  
 >     form.show()  
 >     app.exec_()
+
+## PyQt4代码的移植
+1. 首先把所有“PyQt4”替换成“PyQt5”，接着把“PyQt5.QtGui”改变成“PyQt5.QtWidgets”。
+2. 上面的步骤可以解决大多数导入问题，少数需要进一步调整的，下面用示例的方式（持续更新中）列出，请对照修改。from PyQt5.QtGui import (QIcon,QKeySequence)。
+3. 还有一些PyQt5不再支持的模块，需要在导入时删除，那么对应代码就需要做出修订。比如QString，把代码中对应部分用str代替。
+4. 多半原来的PyQt4代码是支持python2的，而且我也假设你现在升级到了PyQt5的同时，升级到了python3，那么删除从future导入的所有语句吧。另外，python3默认支持unicode，那么需要删除原来所有的unicode函数以避免在新系统中出错。
+5. 最后，上面没有提到的，上网搜索吧，通常Stack Overflow会给你终极解答。
