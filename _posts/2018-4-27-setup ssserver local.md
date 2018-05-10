@@ -4,7 +4,7 @@ title: 搞科学，感谢给了我机会又学会了一门技术
 category: python
 ---
 ## 一.先说废话，别害怕，一步一步可以走下去
-本文主要研究科学，你懂的。原则是：尽量少说话。所以很可能语焉不详，其实，只需要按照指令操作（原文：直接无脑！），它们都是亲测可行的。实在有些理解不了，说明你需要检索网络，查找一些基本的操作。（参考文献：invisprints在wordpress的博客。）
+本文主要研究科学，你懂的。原则是：尽量少说话。所以很可能语焉不详，其实，只需要按照指令操作（原文：直接无脑！），它们都是亲测可行的。实在有些理解不了，说明你需要检索网络，查找一些基本的操作。（参考文献：[invisprints在wordpress的博客](https://invisprints.wordpress.com/2017/02/20/shadowsocks-fu-wu-qi-da-jian/)。）
 
 最后更新日期：2018年4月27日。
 
@@ -82,3 +82,7 @@ macOS上这个可用https://github.com/shadowsocks/ShadowsocksX-NG/releases/down
 2. 点击`打开shado...`。
 3. 打开浏览器，开心搞科学吧。
 4. 万一你不开心了，请首先检查是不是上面的防火墙没有设置好，或者是否手贱打开了内置防火墙。BTW：内置防火墙并不是完全不行，只是我不会用。
+
+## 四.常见故障
+* block all requests from "ip"==>用ssh登录服务器，重启服务service shadowsocks-libev restart
+* hehe
