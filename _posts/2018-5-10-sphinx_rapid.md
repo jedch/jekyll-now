@@ -20,7 +20,7 @@ reStructuredText是一种标记语言，类似于我们很熟悉的markdown，�
 在终端执行下面指令：（mysite，pname等根据自己情况修改）
 > sphinx-quickstart mysite  
 
-后面会回答很多个问题，Project name输入pname，Author name输入aname，Project version输入0.1，其余都直接回车用默认值。再进入mysite目录。
+后面会回答很多个问题，Project name输入pname，Author name输入aname，Project version输入0.1，有关mathjax选项选择y，其余都直接回车用默认值。再进入mysite目录。
 ### 修改配置文件conf.py
 在conf.py文件中添加xelatex支持。
 > latex_engine = 'xelatex'  
@@ -76,12 +76,10 @@ of the subtitle itself, just like titles.
 效果：
 省略吧，这也是markdown让人崩溃的一点。
 ### 数学公式
-很多网上文章推荐用mathjax写公式，这个需要从网上加载mathjax或者把对应文件下载到本地加载。我嫌麻烦，而且有时候需要离线操作，就用到了imgmath解决问题。imgmath缺点是生成的公式是图片，不过可以用吧。修改conf.py文件，添加
-> extensions=['sphinx.ext.imgmath',]  
-
-在example.rst中加入
+使用mathjax，
 > .. math::  
->    \alpha _t(i) = P(O_1, O_2, \ldots  O_t, q_t = S_i \lambda )
+>    (a + b)^2 = a^2 + 2ab + b^2  
+>    (a - b)^2 = a^2 - 2ab + b^2  
 
 命令行make html重新生成网页。DONE！
 
