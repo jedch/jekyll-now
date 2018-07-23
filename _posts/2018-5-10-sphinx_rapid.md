@@ -20,13 +20,16 @@ reStructuredText是一种标记语言，类似于我们很熟悉的markdown，�
 在终端执行下面指令：（mysite，pname等根据自己情况修改）
 > sphinx-quickstart mysite  
 
-后面会回答很多个问题，Project name输入pname，Author name输入aname，Project version输入0.1，有关mathjax选项选择y，其余都直接回车用默认值。再进入mysite目录。
+后面会回答很多个问题，Project name输入pname，Author name输入aname，Project version输入0.1，语言选zh\_CN，有关mathjax选项选择y，其余都直接回车用默认值。再进入mysite目录。
 ### 修改配置文件conf.py
 在conf.py文件中添加xelatex支持。
-> latex_engine = 'xelatex'  
-> latex_elements = {  
+> latex\_engine = 'xelatex'  
+> latex\_elements = {  
 > 'preamble':r'''\usepackage{xeCJK}''',  
 > }  
+
+添加中文搜索支持
+> html\_search\_language = 'zh'
 
 ### 修改index.rst文件
 在文件:caption: Contents:下面一行，添加example。
@@ -40,7 +43,7 @@ of the subtitle itself, just like titles.
 > 
 
 ### 主题样式
-默认的主题是alabaster，可以换成另一个很常见的样式sphinx_rtd_theme。修改conf.py，添加import sphinx_rtd_theme，再修改html_theme='sphinx_rtd_theme'。
+默认的主题是alabaster，可以换成另一个很常见的样式sphinx\_rtd\_theme。修改conf.py，添加import sphinx\_rtd\_theme，再修改html\_theme='sphinx\_rtd\_theme'。
 
 ## 三.输出html和pdf
 在终端分别输入：
@@ -55,6 +58,8 @@ of the subtitle itself, just like titles.
 ### 文字样式
 * 用途：加粗，写法：\*\*加粗\*\*，效果：**加粗**。
 * 用途：斜体，写法：\*斜体\*，效果：*斜体*。
+* 代码， \`\`coding`` ，注意，前后留空格。
+* 代码块，::，下一行缩进，接着所有代码缩进。注意，::前面不能有空行。
 
 ### 插图
 示例代码：
@@ -81,6 +86,6 @@ of the subtitle itself, just like titles.
 >    (a + b)^2 = a^2 + 2ab + b^2  
 >    (a - b)^2 = a^2 - 2ab + b^2  
 
-命令行make html重新生成网页。DONE！
+嗯，上面是单独成行的公式。如果是行内的，插入:math: ``就可以啦。命令行make html重新生成网页。DONE！
 
 后记之题外话：我的文章都尽量避免插图，一者是我偷懒，再者更重要的是希望文档保存及修改方便，如果踩过坑你应该能理解我，单文件纯文本是多么无敌。

@@ -1,0 +1,33 @@
+---
+layout: post
+title: 在MaxOS系统中用pyenv管理python多版本
+category: python
+---
+我总是想简单一点绕开pyenv的坑，最后发觉还是要踩一下。系统环境：MacOS10.13.4，自带python2.7.10，已经安装了命令行工具，系统有brew。
+## 安装pyenv
+在mac中很简单，`brew install pyenv`。再安装virtualenv，`brew install pyenv-virtualenv`。编辑.bash_profile文件，添加下列内容：
+
+```
+# added for pyenv
+export PYENV_ROOT=$HOME/.pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+```
+
+## 从本地文件安装对应python
+鉴于我们网络的特殊性，直接用pyenv install 2.7.10安装会很慢。那么我们准备先从其它快的服务器下载python安装文件到本地，再用pyenv从本地安装。下载服务器有清华搜狐mirror等，比如下载Python-3.6.5.tar.xz和Anaconda3-5.1.0-MacOSX-x86_64.sh到$HOME/.pyenv/cache文件夹。那么使用下列命令就可以安装了：
+
+```
+pyenv install 3.6.5
+pyenv install anaconda3-5.1.0
+```
+注意，只支持tar.xz和sh文件。写到这儿发觉自己按照网上的方法走了很多弯路。问题居然就这么方便的解决了。
+## pyenv的常用命令
+* 设置全局`python`版本: `pyenv global 3.6.5`。
+* 安装完上述版本后不要用pip安装其它内容，先创建虚拟环境
+```
+pyenv virtualenv 3.6.5 p3
+```
+以后在p3环境你就可以为所欲为了。
+* 激活`pyenv activate p3`，解除激活`pyenv deactivate`。
+* 如果把p3环境玩坏了，可以删除`pyenv uninstall p3`，对3.6.5不会有任何影响。

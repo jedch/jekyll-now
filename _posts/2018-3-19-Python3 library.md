@@ -8,5 +8,7 @@ category: python
 ## anaconda
 这个准确说不应该叫做一个库，它实际上包含了常用的第三方库的一个集合。主要有numpy, scipy, pandas, pyqt5等等。以后需要安装第三方库，使用conda install命令就可以安装了。conda能安装的库与pip能安装的库大部分是重叠的，但是有少数只是支持其中一方，正好互为补充了。
 
-## 还有一些
-下面是我没有使用过的，看着有点意思，留存。bitstream二进制。
+## pyenv
+版本管理的。
+## ConfigParser
+读取配置文件。
