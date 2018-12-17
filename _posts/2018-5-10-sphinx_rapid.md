@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用sphinx编写reStructuredText（rst）文档并用xeletex输出pdf文件
+title: Sphinx使用指北
 category: python
 ---
 ## 一.安装与配置

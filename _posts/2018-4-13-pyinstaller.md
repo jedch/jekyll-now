@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在macOS系统下用pyinstaller打包PyQt5应用
+title: 使用pyinstaller打包应用
 category: python
 ---
 系统环境：macOS High Sierra 10.13.4，python3.6.4，PyQt5.6.0，PyInstaller3.3.1。请确保系统中已经成功安装上述软件。
