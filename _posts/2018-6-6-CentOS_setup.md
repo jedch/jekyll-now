@@ -10,8 +10,11 @@ category: python
 2. 安装CentOS。启动需要安装的电脑，修改bios设置，让usb hdd在硬盘之前启动。插入上面制作号的U盘，F10保存配置，重启。进入界面，选择install。后面的配置简单，需要注意的是有一步在左侧选择gnome，在右侧勾选对应的模块。分区先用自动，复选回收，点完成，全部删除，回收空间。再手动，选标准。装好重启，注意选上含pinyin字样的中文。
 
 3. 配置系统。CentOs的有些版本不自动连接有线，很大的坑，可以更改设置。用轮换系统语言中英文的方法，设置文件夹名为英文，如果有什么问题，查看/etc/xdg文件夹。到清华mirror按照提示添加centos，epel源。yum安装dash to dock插件，可能需要重启，通过“应用程序”-“优化”-“扩展”-Dash to dock打开启用。用yumex搜索安装no topleft hot corner插件，重启，像上面一样启用。安装cmake3，及gui。与win系统时间冲突问题，sudo gedit /etc/adjtime，把第三行UTC改为LOCAL，保存重启，修改系统时间为正确的当地时间。开发的话，系统自带g++版本太低，升级吧，下载gcc-7.4.0.tar.bz2，解压tar jxvf gcc-7.4.0.tar.bz2，安装yum install gmp-devel mpfr-devel libmpc-devel，建立编译目录mkdir gcc-7.4.0-build，进入cd gcc-7.4.0-build，配置../gcc-7.4.0/configure --enable-languages=c,c++,fortran --disable-multilib，编译安装make && make install，配置在/et/profile中加入两行export PATH=/usr/local/bin:$PATH和export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH，可能需要重启。
+
 4. 文件系统支持。确保已经安装过EPEL库，再在终端安装Nux Dextop库rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm，更新源。用yum安装ntfs-3g，fuse-exfat，exfat-utils。重启系统。
 
-5. ROOT6在CentOS下可以直接从yum安装二进制。不想折腾的本条后面都不用看了。想折腾的继续，想编译geant4的最好也继续。命令行一键搞定依赖库，sudo yum install git cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel gcc-gfortran openssl-devel pcre-devel mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel fftw-devel cfitsio-devel graphviz-devel avahi-compat-libdns_sd-devel libldap-dev python-devel libxml2-devel gsl-static xerces-c-devel libXmu-devel。清理软件包的过程有点长，耐心等待。最后下载root6的源代码编译安装。为什么要折腾呢？
+5. ROOT6在CentOS下可以直接从yum安装二进制。不想折腾的本条后面都不用看了。想折腾的继续，想编译geant4的最好也继续。命令行一键搞定依赖库，sudo yum install git cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel gcc-gfortran openssl-devel pcre-devel mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel fftw-devel cfitsio-devel graphviz-devel avahi-compat-libdns_sd-devel libldap-dev python-devel libxml2-devel gsl-static xerces-c-devel libXmu-devel hdf5-devel。清理软件包的过程有点长，耐心等待。最后下载root6的源代码编译安装。为什么要折腾呢？
 
-6. Geant4从源代码编译安装。第一步，系统环境准备。
+6. Geant4从源代码编译安装。第一步，下载源码，数据文件，此处版本为10.5。解压所有gz文件for f in *.tar.gz; do tar xvf $f; done。假设安装路径为/home/user/geant4105，同时建立编译文件夹/home/user/g4build，源文件夹/home/user/g4source，其中有解压的源代码。最后确认一次啊，geant4105文件夹包含share/Geant4-10.5.0/data，其中有下载解压的对应数据文件，g4build文件夹为空，g4source文件夹包含cmake，config，environments，examples，ReleaseNotes，source六个文件夹和CmakeLists.txt，LICENSE两个文件。第二步，打开cmake3-gui，源文件选g4source，build文件选g4build。点击Configure两次，修改CMAKE_INSTALL_PREFIX，对应路径为geant4105。在点击Configure，记住，以后每次改动都要点击Configure。打开下列开关：geant4_use_gdml，hdf5，raytracer_x11。确保Configure和Generate都通过显示done。第三步，在终端进入g4build文件夹，make编译完成，make install安装完成。
+
+7. Garfieldpp安装。 
