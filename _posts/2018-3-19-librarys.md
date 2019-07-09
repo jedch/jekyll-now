@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python3常用第三方库简介
+title: Python3示例及第三方库
 category: python
 ---
 由于工作中使用的个别库依赖python2，目前没有升级到python3，所以我一直没有转到python3。但是迟早是要转的，所以下了很大的决心，以后主要使用python3吧。大部分第三方库对2和3都是支持的，下面其实算是一个个人使用或者感兴趣的库的集合。
@@ -14,3 +14,11 @@ category: python
 读取配置文件。
 ## gooey
 把命令行编程GUI界面，很实用。
+## 对列表中的文本，按照其中数字排序
+> import re  
+> la = [ 'ch9.txt', 'ch10.txt', 'ch1.txt', 'ch3.txt', 'ch11.txt' ]  
+> la.sort(key = lambda x:int(re.match('\D+(\d+)\.txt',x).group(1)))  
+> 
+
+输出
+> ['ch1.txt', 'ch3.txt', 'ch9.txt', 'ch10.txt', 'ch11.txt']
