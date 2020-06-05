@@ -32,7 +32,7 @@ reStructuredText是一种标记语言，类似于我们很熟悉的markdown，�
 > html\_search\_language = 'zh'
 
 ### 修改index.rst文件
-在文件:caption: Contents:下面一行，添加example。
+在文件:caption: Contents:下面一行，添加:numbered:，添加空行，添加新的行example。
 ### 新建example.rst文件
 > 中文标题测试  
 > \==========   
