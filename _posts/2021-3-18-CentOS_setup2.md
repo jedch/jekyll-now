@@ -120,8 +120,10 @@ category: python
 
 5. 安装geant4
 
-   # 安装clhep
-   # 本来geant4自带clhep，但是运行实例可能会有“段错误”等版本问题，建议编译，很快
+   安装clhep
+
+   本来geant4自带clhep，但是运行实例可能会有“段错误”等版本问题，建议编译，很快
+
    build, install, src三文件夹编译安装
 
    #安装geant4
@@ -153,8 +155,8 @@ category: python
 
    1. 后记：centos7-2003中geant4编译不过去，其它没有问题。
    2. 安装chrome
-     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-     sudo yum localinstall google-chrome-stable_current_x86_64.rpm
+       wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+       sudo yum localinstall google-chrome-stable_current_x86_64.rpm
    3. 把文件夹添加到侧边栏
    4. nscl daq
    5. pkuxiadaq
