@@ -152,7 +152,6 @@ c.Draw()
 8，Garfieldpp安装。 按照官方网站安装步骤，分别输入下面四条命令：export GARFIELD_HOME=/home/mydir/garfield，git clone https://gitlab.cern.ch/garfield/garfieldpp.git $GARFIELD_HOME，cd $GARFIELD_HOME，make。保持网络畅通，可以安装成功。以后保持代码更新用git pull origin master，再make（待测试）。进入到示例目录，如cd Example/Gem，运行make即可得到一个gem可执行文件。上述过程在CentOS和MaxOS下都测试了。要说明的是，在macos下运行实例不成功，需要解决链接gfortran库的问题。
 
 9，其它
-
    #后记：centos7-2003中geant4编译不过去，其它没有问题。
    #把文件夹添加到侧边栏,直接拖动上去即可。
   #nscl daq
