@@ -67,7 +67,7 @@ source ~/.bashrc
 
 mkdir -p $HOME/program/{clhep,geant4,root}/{build,install}
    #断网安装sublime
-“Preferences”=> "Settings-User" ，插入"update_check": false,
+"Preferences"=> "Settings-User" ，插入"update_check": false,
 echo "export PATH=$PATH:$HOME/program/sublime_text_3" >> ~/.bashrc
 echo 'alias sl="$HOME/program/sublime_text_3/sublime_text"' >> ~/.bashrc
 source ~/.bashrc
@@ -84,6 +84,9 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 conda create --name py36 python=3.6
 conda activate py36
 在.bashrc末尾添加conda activate py36
+source ~/.bashrc
+查看状态
+conda info -e
 
 pyqt4在conda forge可以找到下载，要求python 3.6*, qt >=4.8.6,<5.0, sip 4.18,在Downloads目录本地安装
 conda install --use-local pyqt-4.11.4-py36_3.tar.bz2
